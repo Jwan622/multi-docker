@@ -5,22 +5,22 @@ services:
 
 #just for tests
 before_install:
-  - docker build -t jwan/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t jwan622/react-test -f ./client/Dockerfile.dev ./client
 
 # run tests
 script:
-  - docker run -e CI=true jwan/react-test npm test
+  - docker run -e CI=true jwan622/react-test npm test
 
 # prod builds, no need to specify Dockerfile, it finds it by default
 after_success:
-  - docker build -t jwan/multi-client ./client
-  - docker build -t jwan/multi-nginx ./nginx
-  - docker build -t jwan/multi-server ./server
-  - docker build -t jwan/multi-worker ./worker
+  - docker build -t jwan622/multi-client ./client
+  - docker build -t jwan622/multi-nginx ./nginx
+  - docker build -t jwan622/multi-server ./server
+  - docker build -t jwan622/multi-worker ./worker
   # push to Dockerhub, login first
   - echo "$DOCKER_PASSWORD" | docker login -u  "$DOCKER_ID" --password-stdin
-  - docker push jwan/multi-client
-  - docker push jwan/multi-nginx
-  - docker push jwan/multi-server
-  - docker push jwan/multi-worker
+  - docker push jwan622/multi-client
+  - docker push jwan622/multi-nginx
+  - docker push jwan622/multi-server
+  - docker push jwan622/multi-worker
 

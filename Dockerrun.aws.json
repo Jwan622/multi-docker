@@ -1,0 +1,10 @@
+{
+  "AWSEBSDockerrunVersion" : 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "jwan/multi-client",
+      "hostname": "client"
+    }
+  ]
+}
