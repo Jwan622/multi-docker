@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "jwan/multi-client",
+      "image": "jwan622/multi-client",
       "hostname": "client"
     }
   ]
